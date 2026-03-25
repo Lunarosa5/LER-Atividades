@@ -40,10 +40,75 @@ O SGT será uma aplicação web responsável com sincronização em nuvem.
 **Prioridade**: Alta.
 **Versão**: 1.0
 **Data**: 2026-03-25
-**RAstreabilidade**: Derivado de Necessidades do StakeHolder (NS-001)
+**RAstreabilidade**: Derivado de Necessidades do StakeHolder (NS-001).
 **Critérios de Aceitação**:
+
 - [ ] Usuário pode criar, renomear e excluir tarefas.
 - [ ] Formulário com campos obrigatórios (título) e opcionais.
 - [ ] Níveis de prioridade: Baixa, média, alta e urgente.
 - [ ] Confirmação visual após criação.
-- [ ] Validação de datas.
+- [ ] Validação de dados das tarefas (não permitir datas vazias).
+
+---
+
+#### RF-002: Organização por Projetos
+
+**Descrição**: O sistema deve permitir agrupar tarefas em projetos personalizados.
+**Prioridade**: Média.
+**Versão**: 1.0
+**Data** 2026-03-25
+**Rastreabilidade**: Derivado de NS-002.
+**Critérios de Aceitação**:
+
+- [ ] Usuário pode criar, renomear e excluir projetos.
+- [ ] Tarefas podem ser atribuidas a um ou mais projetos.
+- [ ] Visualização filtrada por projetos.
+
+---
+
+### 3.2 Requisitos Não-Funcionais
+
+#### RNF-001: Desempenho
+
+**Descrição**: O sistema deve carregar a lista de tarefas em menos de 1 segundo para até 100 tarefas.
+**Categoria**: Desempenho.
+**Prioridade**: Alta.
+**Versão**: 1.0
+**Métrica**: Tempo de resposta < 1s para 95% das requisições.
+
+--- 
+
+#### RNF-001: Segurança
+
+**Descrição**: O sistema deve implementar autenticação Oauth 2.0 e criptografia TLS 1.3.
+**Categoria**: Segurança.
+**Prioridade**: Crítica.
+**Versão**: 1.0
+**Métrica**: Conformidade LGPD, GDPR.
+
+---
+
+## 4. Controle de Versões
+
+### Histórico de Alterações
+
+|Versão|Data|Autor|Modificação|
+|------|----|-----|-----------|
+|1.0|2026-03-25|Luna|Versão Inicial|
+
+### Rastreabilidade
+
+Gráfico de Rastreabilidade
+
+```mermaid
+
+graph TD
+
+    NS001['NS-001: Necessidade Stakeholder] --> RF001['RF-001: Criação Tarefas']
+    RF001 --> TC001['TC-001: Teste Criação]
+
+    NS002['NS-002: Organização'] --> RF002['RF-002: Projetos']
+    RF002 --> TC002['TC-002: Teste Projetos']
+
+```
+
