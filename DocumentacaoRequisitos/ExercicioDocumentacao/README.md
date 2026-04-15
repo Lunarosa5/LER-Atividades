@@ -1,28 +1,28 @@
-# Sistema de Gerenciamneto de Reservsa de Hotel (Jan/2026)
+# Sistema de Gerenciamento de Reservas de Hotel (Fev/2026)
 
 ## 1. Introdução
-Este documento especifica os requisito original para o sistema de reservas do hotel, servindo como base para o desenvolvimento inicial.
+Este documento atualiza o requisito original para incluir condições especiais para clientes VIP, conforme solicitado pelo departamento de vendas.
 
 ## 2. Visão Geral
-O sistema deve garantir que os usuários possam realizar suas reservas de quartos com antecedência mínima de até 24 horas e máxima de 6 meses.
+O sistema mantém as regras originais, mas agora expande o limite de reserva para usuários com status VIP.
 
 ## 3. Requisitos Específicos
 
 ### 3.1 Requisitos Funcionais
 
-#### RF-010: Criação de Tarefas
-**Descrição**: O sistema deve permitir que usuários realizem reservas de quartos com antecedência mínima de 24 horas e máxima de 6 meses.
+#### RF-010: Regras de Antecedência (VIP)
+**Descrição**: O sistema deve permitir reservas com antecedência mínima de 24 horas e máxima de 6 meses. Clientes VIP têm o benefício de reservar com até 1 ano de antecedência.
 
 **Prioridade**: Alta  
-**Versão**: 1.0  
-**Data**: Jan/2026
+**Versão**: 2.0  
+**Data**: Fev/2026
 
 **Critérios de Aceitação**:
-- [ ] O calendário só deve habilitar datas a partir de 24h do horário atual.
-- [ ] O calendário deve bloquear datas além de 6 meses no futuro.
-- [ ] Exibir mensagem de erro caso o usuário tente digitar uma data fora do intervalo.
+- [ ] Validar se o usuário possui status "VIP" no perfil.
+- [ ] Liberar calendário de 1 ano apenas para usuários autenticados como VIP.
+- [ ] Manter bloqueio de 6 meses para usuários comuns.
 
-**Dependências**: Nenhuma
+**Dependências**: Cadastro de Usuários (VIP).
 
 
 ## 4. Controle de Versão
@@ -33,7 +33,7 @@ O sistema deve garantir que os usuários possam realizar suas reservas de quarto
 
 |ID do Requisito|Descrição|Versão|Data|Autor|Modificação|Impacto|
 |---------------|---------|------|----|-----|-----------|-------|
-|RF-010|O sistema permite que usuários realizem reservas de quartos com antecedência mínima de 24 horas e máxima de 6 meses.|v1.0|Jan/2026|Analista Luna|Versão Inicial|Médio. Definição dos prazos padrão (24h a 6 meses)|
+|RF-010|Reservas de 24h a 6 meses; Clientes VIP podem reservar até 1 ano|v2.0|Fev/2026|Analista Luna|Clientes VIP podem reservar até 1 ano antes|Médio. Necessário identificar o tipo de cliente|
 
 ## 5. Conclusão
-A Versão 1.0 define a regra básica de 24h a 6 meses para garantir a organização inicial do hotel.
+A Versão 2.0 adapta o sistema para estratégias comerciais, permitindo maior flexibilidade de planejamento para clientes VIP.
