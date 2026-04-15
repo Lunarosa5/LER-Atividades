@@ -1,28 +1,28 @@
-# Sistema de Gerenciamento de Reservas de Hotel (Fev/2026)
+# Sistema de Gerenciamento de Reservas de Hotel (Mar/2026)
 
 ## 1. Introdução
-Este documento atualiza o requisito original para incluir condições especiais para clientes VIP, conforme solicitado pelo departamento de vendas.
+Este documento atualiza o requisito RF-010 para incluir a nova política de reservas de última hora com aplicação de taxa adicional.
 
 ## 2. Visão Geral
-O sistema mantém as regras originais, mas agora expande o limite de reserva para usuários com status VIP.
+O sistema passa a permitir reservas imediatas (menos de 2h de antecedência), mas com cobrança para estes casos específicos.
 
 ## 3. Requisitos Específicos
 
 ### 3.1 Requisitos Funcionais
 
 #### RF-010: Regras de Antecedência (VIP)
-**Descrição**: O sistema deve permitir reservas com antecedência mínima de 24 horas e máxima de 6 meses. Clientes VIP têm o benefício de reservar com até 1 ano de antecedência.
+**Descrição**: Além das regras anteriores, agora são permitidas reservas com menos de 2 horas de antecedência, por meio do pagamento de uma taxa adicional de 15%.
 
 **Prioridade**: Alta  
 **Versão**: 2.0  
-**Data**: Fev/2026
+**Data**: Mar/2026
 
 **Critérios de Aceitação**:
-- [ ] Validar se o usuário possui status "VIP" no perfil.
-- [ ] Liberar calendário de 1 ano apenas para usuários autenticados como VIP.
-- [ ] Manter bloqueio de 6 meses para usuários comuns.
+- [ ] Liberar reservas com antecedência inferior a 2 horas.
+- [ ] Aplicar acréscimo de 15% no valor total para essas reservas.
+- [ ] Exibir o valor da taxa separadamente no total da compra.
 
-**Dependências**: Cadastro de Usuários (VIP).
+**Dependências**: Modo de pagamento.
 
 
 ## 4. Controle de Versão
@@ -33,7 +33,12 @@ O sistema mantém as regras originais, mas agora expande o limite de reserva par
 
 |ID do Requisito|Descrição|Versão|Data|Autor|Modificação|Impacto|
 |---------------|---------|------|----|-----|-----------|-------|
-|RF-010|Reservas de 24h a 6 meses; Clientes VIP podem reservar até 1 ano|v2.0|Fev/2026|Analista Luna|Clientes VIP podem reservar até 1 ano antes|Médio. Necessário identificar o tipo de cliente|
+|RF-010|Permite reservas com menos de 2h com taxa extra de 15%.|v3.0|Mar/2026|Analista Luna|Nova política de última hora.|Alto. Altera o cálculo do valor total|
+
+## Análise de Impacto
+- Requisitos Afetados: Pagamentos (Cálculo).
+- Stakeholders: Gerente de Vendas e Financeiro.
+- Esforço: Alto (exige testes financeiros).
 
 ## 5. Conclusão
-A Versão 2.0 adapta o sistema para estratégias comerciais, permitindo maior flexibilidade de planejamento para clientes VIP.
+A Versão 3.0 altera o sistema para atender demandas urgentes, transformando uma restrição em uma nova oportunidade de ganho.
